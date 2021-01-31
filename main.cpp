@@ -12,14 +12,14 @@ class ASum
 
 
 long long ASum::findNb(long long m) {
-	long n = 0;
+	long n = 0; //set initial count
 	do {
-		//one possible option would be to start at 0 and calculate up however an easier solution is to just decrement the starting number down to 0
-		m -= (n * n * n); //an option would be to use pow however there are issues when dealing with very large numbers; however this would also require an additional header cmath.h
+		//one possible option would be to start at 0 and calculate up however in addition to requiring an addition variable an easier solution is to just decrement the starting number down to 0
+		m -= (n * n * n); //an option would be to use pow however there are issues when dealing with very large numbers; in addition this method also requires adding the header cmath.h
 		if(m == 0) { return n; } //breaking condition
-		n++; //update number after possible return to avoid return erro
+		n++; //update count after possible return to avoid return erro
 	} while( m > 0 ); //breaking condition; no further computing required
-	return -1; //default return condition if not foind
+	return -1; //default return condition if not found
 }
 
 int main() {
